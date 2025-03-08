@@ -1,0 +1,16 @@
+.user-sidebar{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.2fr 0.8fr;
+}
+
+.left-user-sidebar{
+    text-align: center;
+    height: 35rem;
+    border-right: solid 1px lightgray;
+}
+
+.right-user-sidebar{
+    text-align: center;
+}
+

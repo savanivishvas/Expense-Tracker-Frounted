@@ -1,0 +1,97 @@
+.login-background{
+    background-image: url("/images/back1.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+.login-section {
+    top: 50%;
+    left: 50%;
+    width: 25%;
+    position: absolute;
+    border: solid 1px lightgrey;
+    transform: translate(-50%, -50%);
+    box-shadow: 2px 0px 10px 5px rgba(0,0,0,0.40);
+
+    & form{
+    
+        & h1{
+            text-align: center;
+            padding: 1rem 4rem;
+            color: var(--theme-color);
+            background-color: var(--light-black-color);
+        }
+    }
+}
+
+.login-details{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1rem 2rem;
+
+    & .row{
+        height: 40px;
+        /* position: relative; */
+
+        & span {
+            color: red;
+        }
+
+        & input{
+            height: 100%;
+            width: 100%;
+            outline: none;
+            padding-left: 1rem;
+            border-radius: 5px;
+            border: 1px solid lightgrey;
+            font-size: 16px;
+            font-family: 'Urbanist',sans-serif;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+    }
+
+    & .fp{
+        margin-top: -0.8rem;
+
+        & span{
+            color: var(--theme-color);
+            font-size: 1.1rem;
+            font-weight: 300;
+            cursor: pointer;
+        }
+    }
+
+    & .submit-btn {
+        height: 40px;
+
+        & input {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            color: var(--theme-color);
+            font-size: 20px;
+            background: var(--light-black-color);
+            border: 1px solid var(--border-color);
+            font-family: 'Urbanist',sans-serif;
+        }
+    }
+
+    & .info {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 400;
+
+        & a {
+            color: var(--theme-color);
+        }
+    }
+    
+}
+  
+
