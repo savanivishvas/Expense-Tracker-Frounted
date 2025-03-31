@@ -1,0 +1,149 @@
+.admin-containar{
+    background-color: #F7F7F7;
+}
+
+.inside-admin{
+    margin: 2rem;
+}
+
+/* ------------------- [ 1. search - add income ] --------------- */
+
+.operation-admin {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 0.85fr 0.15fr;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.search-admin input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-admin input::placeholder {
+    color: #aaa;
+}
+
+.add-admin button {
+    background: var(--theme-color);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.add-admin button:hover {
+    background: #218838;
+}
+
+/* ------------------------------- [ 2. Modal Styling ] ------------------------- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+  
+.modal-content h3 {
+  margin-bottom: 15px;
+}
+
+.modal-content label {
+  display: block;
+  margin: 5px 0;
+  text-align: left;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+  
+.modal-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background: #28a745;
+  color: white;
+}
+
+.modal-buttons button:last-child {
+  background: #dc3545;
+  color: white;
+}
+
+/* -------------------------------- [3. income sources ] -------------------------- */
+
+
+table {
+  width: 100%;
+  margin: 1rem auto;
+  /* border: 1px solid var(--theme-color); */
+  /* box-shadow: rgba(255, 255, 255, 0.2)0px 7px 29px 0px; */
+
+  & th {
+    padding: 0.5rem;
+    font-size: 1.4rem;
+    background: var(--theme-color);
+    width: 100%;
+    color: white;
+    text-transform: capitalize;
+  }
+
+  & tr {
+    display: grid;
+    grid-template-columns:repeat(3 , 1fr);
+    text-align: center;
+    /* border: 0.5px solid var(--theme-color); */
+  }
+
+  & td {
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 1rem;
+    margin: 0.5rem auto;
+    letter-spacing: 0.1rem;
+  }
+
+  & .admin-action{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+  }
+}

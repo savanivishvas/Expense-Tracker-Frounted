@@ -1,0 +1,40 @@
+.report-containar{
+    background-color: #F7F7F7;
+    /* max-width: 100%; */
+}
+
+.inside-report{
+    margin: 2rem;
+}
+
+/* -------------------------- [ 1. report card ] ------------------------------ */
+
+.report-cards {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+
+    & .report-card-title {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 1.2rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        & h2 {
+            font-size: 1rem;
+            color: #777;
+        }
+    }
+}
+
+/* ------------------ [ 2. chart section ] -------------------------------------- */
+
+.chart{
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+}

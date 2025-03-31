@@ -1,0 +1,88 @@
+.expense-containar{
+    background-color: #F7F7F7;
+}
+
+.inside-expense{
+    margin: 2rem;
+}
+
+/* ------------------- [ 1. search - add expense ] --------------- */
+
+.operation-expense {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 0.85fr 0.15fr;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.search-expense input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-expense input::placeholder {
+    color: #aaa;
+}
+
+.add-expense button {
+    background: var(--theme-color);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.add-expense button:hover {
+    background: #218838;
+}
+
+/* ------------------------------- [ 2. Modal Styling ] ------------------------- */
+
+/* same income model */
+
+/* -------------------------------- [ 3. expense sources ] -------------------------- */
+
+.expense-ul{
+    margin-top: 1rem;
+  }
+  
+.expense-list{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4,1fr);
+}
+
+.expense-category{
+  display:flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.expense-transactiondate{
+  text-align: center;
+}
+
+.expense-amount{
+  text-align: center;
+  color: red;
+}
+
+.expense-action{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 1.5rem;
+  cursor: pointer;
+}

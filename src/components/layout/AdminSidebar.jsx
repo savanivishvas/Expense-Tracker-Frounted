@@ -1,6 +1,6 @@
 import { AdminNavbar } from "./AdminNavbar"
 import "../../assets/css/adminsidebar.css"
-import { Outlet } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 
 export const AdminSidebar = () => {
   return (
@@ -8,13 +8,19 @@ export const AdminSidebar = () => {
       <AdminNavbar />
       <div className="admin-sidebar">
         <div className="left-admin-sidebar">
-          <h1>UserSidebar</h1>
+        <div className="admin-feature">
+            <ul className="feature-ul">
+              <li className="feature-list">
+                  <Link to="/admin/dashboard" className="feature-link">
+                    <img src="/images/dashboard.png" alt="dashboard-img" className="feature-icon"/>
+                    Dashboard
+                  </Link>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="right-admin-sidebar">
-          <h1>Welcome Admin Page</h1>
-        </div>
+        <Outlet></Outlet>
       </div>
-      <Outlet></Outlet>
     </>
   )
 }

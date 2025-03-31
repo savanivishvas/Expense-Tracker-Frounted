@@ -1,0 +1,102 @@
+.dashboard-containar{
+    background-color: #F7F7F7;
+    /* max-width: 100%; */
+}
+
+.inside-dashboard{
+    margin: 2rem;
+}
+/* -------------------- [ 1. cards - row ] ----------------------------------------- */
+
+.cards-row {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+
+.card .card-text{
+    margin-left: 1rem;
+}
+
+.card h2 {
+  font-size: 1rem;
+  color: #777;
+}
+
+.card img{
+    height: 2rem;
+}
+
+.card p {
+  margin-top: 0.2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ------------------- [ 2. dashboard content ] ----------------------------- */
+
+.dashboard-content{
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* ------------------- [ 2.1  recent transactions ] ----------------------------- */
+
+.recent-transactions{
+    border-radius: 8px;
+    padding: 1.2rem;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.transactions-ul{
+    margin-top: 1rem;
+}
+
+.transactions-list{
+    display: flex;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.transactions-left{
+    display: flex;
+}
+
+.transactions-left-content{
+    display: flex;
+    margin-left: 1rem;
+    flex-direction: column;
+}
+
+/* ------------------- [ 2.2 financial overview ] ----------------------------- */
+
+.financial-overview{
+    border-radius: 8px;
+    padding: 1.2rem;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.financial-chart{
+    margin: 1rem auto;
+}
+
+
+
+
+
+

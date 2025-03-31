@@ -1,5 +1,5 @@
 .login-background{
-    background-image: url("/images/back1.avif");
+    background-image: url("/images/back3.avif");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -57,7 +57,7 @@
     }
 
     & .fp{
-        margin-top: -0.8rem;
+        margin-top: 0rem;
 
         & span{
             color: var(--theme-color);
@@ -94,4 +94,59 @@
     
 }
   
+/* media query */
+
+@media (max-width: 768px) {
+    .login-background {
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+    }
+
+    .login-section {
+        width: 90%; /* Adjusts width for smaller screens */
+        box-shadow: 2px 0px 8px 4px rgba(0, 0, 0, 0.25);
+
+        & form {
+            & h1 {
+                font-size: 1.5rem;
+                padding: 0.8rem 2rem;
+            }
+        }
+    }
+
+    .login-details {
+        padding: 1rem;
+        gap: 1rem;
+
+        & .row {
+            height: 35px;
+
+            & input {
+                font-size: 14px;
+                padding-left: 0.8rem;
+            }
+        }
+
+        & .fp {
+            margin-top: 0rem;
+
+            span {
+                font-size: 1rem;
+            }
+        }
+
+        & .submit-btn {
+            height: 36px;
+
+            input {
+                font-size: 18px;
+            }
+        }
+
+        & .info {
+            font-size: 1rem;
+        }
+    }
+}
 

@@ -1,0 +1,145 @@
+.income-containar{
+    background-color: #F7F7F7;
+}
+
+.inside-income{
+    margin: 2rem;
+}
+
+/* ------------------- [ 1. search - add income ] --------------- */
+
+.operation-income {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 0.85fr 0.15fr;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.search-income input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-income input::placeholder {
+    color: #aaa;
+}
+
+.add-income button {
+    background: var(--theme-color);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.add-income button:hover {
+    background: #218838;
+}
+
+/* ------------------------------- [ 2. Modal Styling ] ------------------------- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+  
+.modal-content h3 {
+  margin-bottom: 15px;
+}
+
+.modal-content label {
+  display: block;
+  margin: 5px 0;
+  text-align: left;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+  
+.modal-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background: #28a745;
+  color: white;
+}
+
+.modal-buttons button:last-child {
+  background: #dc3545;
+  color: white;
+}
+
+/* -------------------------------- [3. income sources ] -------------------------- */
+
+.income-ul{
+  margin-top: 1rem;
+}
+
+.income-list{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4,1fr);
+}
+
+.income-category{
+  display:flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.income-transactiondata{
+  text-align: center;
+}
+
+.income-amount{
+  text-align: center;
+  color: #28a745;
+}
+
+.income-action{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 1.5rem;
+  cursor: pointer;
+}

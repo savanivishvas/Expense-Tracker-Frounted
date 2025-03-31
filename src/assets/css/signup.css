@@ -1,5 +1,5 @@
 .signup-background{
-    background-image: url("/images/back1.avif");
+    background-image: url("/public/images/back3.avif");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -57,7 +57,7 @@
     }
 
     & .fp{
-        margin-top: -0.8rem;
+        margin-top: 0rem;
 
         & span{
             color: var(--theme-color);
@@ -69,7 +69,6 @@
 
     & .submit-btn {
         height: 40px;
-        margin-top: -0.5rem;
 
         & input {
             width: 100%;
@@ -136,6 +135,73 @@
 
         & span{
             text-align: center;
+        }
+    }
+}
+
+/* media query */
+
+@media (max-width: 768px) {
+    .signup-background {
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+    }
+
+    .signup-section {
+        width: 90%; 
+        box-shadow: 2px 0px 10px 5px rgba(0, 0, 0, 0.25);
+
+        & form {
+            & h1 {
+                font-size: 1.5rem;
+                padding: 0.5rem 2rem;
+            }
+        }
+    }
+
+    .signup-details {
+        padding: 1rem;
+        gap: 1rem;
+
+        & .row {
+            height: 30px;
+
+            & input {
+                font-size: 14px;
+                padding-left: 0.8rem;
+            }
+        }
+
+        & .fp {
+            margin-top: 0rem;
+
+            span {
+                font-size: 1rem;
+            }
+        }
+
+        & .submit-btn {
+            height: 36px;
+
+            input {
+                font-size: 18px;
+            }
+        }
+
+        & .or {
+            gap: 8px;
+        }
+
+        & .google {
+            & button {
+                font-size: 14px;
+                padding: 0.5rem;
+            }
+        }
+
+        & .info {
+            font-size: 1rem;
         }
     }
 }

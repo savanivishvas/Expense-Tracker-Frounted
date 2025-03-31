@@ -4,12 +4,13 @@
     box-sizing: border-box;
     list-style-type: none;
     font-family: "Urbanist",sans-serif;
+    scrollbar-width: none;
 }
 
 :root{
     --theme-color: #50BB77;
     --theme-light-color: #AAD7A4;
-    --theme-dark-color: #0C2718;
+    --theme-dark-color: #27391C;
     --black-color: #383838;
     --light-black-color: #515151;
     --white-color: #FDFDFD;
