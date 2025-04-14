@@ -11,7 +11,7 @@
 .operation-expense {
     display: grid;
     gap: 2rem;
-    grid-template-columns: 0.85fr 0.15fr;
+    grid-template-columns: 0.75fr 0.10fr 0.15fr;
     align-items: center;
     border-radius: 8px;
 }
@@ -52,37 +52,69 @@
 /* -------------------------------- [ 3. expense sources ] -------------------------- */
 
 .expense-ul{
-    margin-top: 1rem;
+  margin-top: 1rem;
+
+  & .expense-list{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    grid-template-columns: repeat(4,1fr);
   }
   
-.expense-list{
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  grid-template-columns: repeat(4,1fr);
+  & .expense-category{
+    display:flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  & .expense-transactiondate{
+    text-align: center;
+  }
+  
+  & .expense-amount{
+    text-align: center;
+    color: red;
+  }
+  
+  & .expense-action{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+  }
+  
 }
+  
+/* Media query for mobile */
 
-.expense-category{
-  display:flex;
-  gap: 1rem;
-  align-items: center;
-}
+@media (max-width: 768px) {
+  .inside-expense {
+    margin: 1rem;
+  }
 
-.expense-transactiondate{
-  text-align: center;
-}
+  .operation-expense {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 
-.expense-amount{
-  text-align: center;
-  color: red;
-}
+  .add-expense button {
+    width: 100%;
+  }
 
-.expense-action{
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  gap: 1.5rem;
-  cursor: pointer;
+ 
+
+  .expense-category {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .expense-action {
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+  }
 }

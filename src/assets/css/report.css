@@ -38,3 +38,74 @@
     display: flex;
     justify-content: center;
 }
+
+.inside-income-expense{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.expense-ul {
+
+    & .expense-report-list{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+}
+
+.income-ul {
+
+    & .income-report-list{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+/* Media query for mobile */
+
+@media (max-width: 768px) {
+    .inside-report {
+      margin: 1rem;
+    }
+  
+    /* Report cards: stack vertically */
+    .report-cards {
+      grid-template-columns: 1fr;
+    }
+  
+    .report-cards .report-card-title {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .report-cards .report-card-title h2 {
+      font-size: 0.95rem;
+    }
+  
+    /* Chart section */
+    .chart {
+      flex-direction: column;
+      padding: 1rem 0;
+    }
+  
+    /* Income and expense sections: stack */
+    .inside-income-expense {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  
+    .expense-report-list .income-report-list {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      justify-content: space-between;
+    }
+  }
+  

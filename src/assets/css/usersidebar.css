@@ -76,4 +76,47 @@
     }
 }
 
+/* Media query for mobile */
 
+@media (max-width: 768px) {
+    .user-sidebar {
+      grid-template-columns: 1fr; /* Stack columns vertically */
+    }
+  
+    .left-user-sidebar {
+      border-right: none;
+      border-bottom: solid 1px lightgray;
+      padding: 1rem;
+  
+      & .user-feature {
+        & .userdata {
+          & img {
+            width: 3rem;
+            height: 3rem;
+          }
+  
+          & span {
+            font-size: 1.2rem;
+          }
+        }
+  
+        & .feature-ul {
+          margin-top: 0.8rem;
+  
+          & .feature-list {
+            padding: 0.6rem 0.8rem;
+          }
+  
+          & .feature-link {
+            font-size: 1rem;
+            gap: 0.5rem;
+          }
+  
+          .feature-icon {
+            height: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+  

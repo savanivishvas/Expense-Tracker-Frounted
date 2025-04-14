@@ -60,40 +60,40 @@ export const AdminSignup = () => {
 
   return (
     <div className="signup-background">
-      <div class="signup-section">
+      <div className="signup-section">
         <form onSubmit={handleSubmit(submitHandler)}>
           <h1>Admin SignUp</h1>
-          <div class="signup-details">
-            <div class="row">
+          <div className="signup-details">
+            <div className="row">
               <input type="text" placeholder="Enter Full Name" {...register("name", validationSchema.nameValidator)}/>
               <span>{errors.name?.message}</span>
             </div>
-            <div class="row">
+            <div className="row">
               <input type="email" placeholder="Enter Email" {...register("email", validationSchema.emailValidator)}/>
               <span>{errors.email?.message}</span>
             </div>
-            <div class="row">
+            <div className="row">
               <input type="password" placeholder="Enter Password" {...register("password", validationSchema.passwordValidator)}/>
               <span>{errors.password?.message}</span>
             </div>
-            <div class="fp">
+            <div className="fp">
               <span>Forgot Password?</span>
             </div>
-            <div class="submit-btn">
+            <div className="submit-btn">
               <input type="submit" value="Sign Up"/>
             </div>
-            <div class="or">
+            <div className="or">
               <hr />
               <span>Or</span>
               <hr />
             </div>
-            <div class="google">
+            <div className="google">
               <button type="button" style={{backgroundColor:"white"}}>
                 <img src="/images/google_icon.svg" alt="Google Icon" />
                 Sign Up With Google
               </button>
             </div>
-            <div class="info">
+            <div className="info">
               <span>
                 {`Already have an account?`}
                 <Link to="/admin/adminlogin">Login</Link>

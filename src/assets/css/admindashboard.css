@@ -147,3 +147,58 @@ table {
     cursor: pointer;
   }
 }
+
+/* Media query for mobile */
+
+@media (max-width: 768px) {
+  .inside-admin {
+    margin: 1rem;
+  }
+
+  .operation-admin {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .add-admin button {
+    width: 100%;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  table {
+    overflow-x: auto;
+    display: block;
+  }
+
+  table tr {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0;
+  }
+
+  table th {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  table td {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+
+  .admin-action {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}

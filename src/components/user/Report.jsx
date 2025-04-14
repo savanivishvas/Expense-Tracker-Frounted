@@ -2,6 +2,7 @@ import { BarChart } from '@mui/x-charts/BarChart';
 import "../../assets/css/report.css";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { FormatDate } from '../common/FormatDate';
 
 export const Report = () => {
 
@@ -10,6 +11,8 @@ export const Report = () => {
   const [weekwisereport,setweekwisereport] = useState([]);
   const [monthwisereport,setmonthwisereport] = useState([]);
   const [yearwisereport,setyearwisereport] = useState([]);
+  const [last30daysexpense,setlast30daysexpense] = useState([]);
+  const [last30daysincome,setlast30daysincome] = useState([]);
 
   const DayWiseReport = async () => {
     const res =  await axios.get("/report/daywisereport");
@@ -35,11 +38,23 @@ export const Report = () => {
     // console.log(res.data.data);
   }
 
+  const last30DaysIncome = async () => {
+    const res =  await axios.get("/income/last30dayincome");
+    setlast30daysincome(res.data.data);
+  }
+
+  const last30DaysExpense = async () => {
+    const res =  await axios.get("/expense/last30dayexpense");
+    setlast30daysexpense(res.data.data);
+  }
+
   useEffect(() => {
     DayWiseReport();
     WeekWiseReport();
     MonthWiseReport();
     YearWiseReport();
+    last30DaysIncome();
+    last30DaysExpense();
   },[])
 
   return (
@@ -213,8 +228,65 @@ export const Report = () => {
             }
           </div>
 
+          {/* last 30 day income and expense */}
+
+          <div className='resent-income-expense'>
+            <div className='inside-income-expense'>
+
+              <div>
+                <h3>Recent Income Transactions</h3>
+  
+                <ul className="income-ul">
+                  {
+                    last30daysincome?.map((income, index) => (
+                      <li className="income-report-list" key={index}>
+                        <div className="income-category">
+                          <img src="/images/income.png" alt="income" />
+                          <span>{income.category}</span>
+                        </div>
+                        <div className="income-transactiondata">
+                          <span>{FormatDate(income.transactionDate)}</span>
+                        </div>
+                        <div className="income-amount">
+                          <span>+ {income.amount}</span>
+                        </div>
+                      </li>
+                    ))
+                  }
+                  </ul>
+              </div>
+
+              <div>
+                <h3>Recent Expense Transactions</h3>
+                
+                <ul className="expense-ul">
+                  {
+                   last30daysexpense?.map((expense, index) => (
+                      <li className="expense-report-list" key={index}>
+                        <div className="expense-category">
+                          <img src="/images/expense.png" alt="expense" />
+                          <span>{expense.category}</span>
+                        </div>
+                        <div className="expense-transactiondate">
+                          <span>{FormatDate(expense.transactionDate)}</span>
+                        </div>
+                        <div className="expense-amount">
+                          <span>+ {expense.amount}</span>
+                        </div>
+  
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
+
+      
     </>
   )
 }

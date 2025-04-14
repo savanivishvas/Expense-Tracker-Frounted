@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 
 export const Profile = () => {
   const [userdata, setuserdata] = useState({ fullName: "", email: "" });
+  const [profileimg,setprofileimg] = useState("/images/men-1.png");
   const navigate = useNavigate();
 
   const getUserData = async () => {
@@ -39,6 +40,18 @@ export const Profile = () => {
     }
   };
 
+  const handleProfileImage = (e) => {
+    const file = e.target.files[0]; // Get the selected file
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setprofileimg(event.target.result); // Update image preview
+      };
+      reader.readAsDataURL(file); // Convert file to base64 URL
+    }
+  }
+
+
   useEffect(() => {
     getUserData();
   }, []);
@@ -48,7 +61,10 @@ export const Profile = () => {
       <div className="inside-profile">
 
         <div className="profile-content">
-          <img src="/images/man-1.png" alt="User Avatar" className="profile-avatar" />
+          <div className="profile-img">
+            <img src={profileimg} alt="User Avatar" className="profile-avatar" />
+            <input type="file" accept="image/*" onChange={handleProfileImage}/>
+          </div>
           <div className="profile-details">
             <div className="profile-field">
               <div>

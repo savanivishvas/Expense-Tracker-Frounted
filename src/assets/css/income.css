@@ -11,51 +11,58 @@
 .operation-income {
     display: grid;
     gap: 2rem;
-    grid-template-columns: 0.85fr 0.15fr;
+    grid-template-columns: 0.75fr 0.10fr 0.15fr;
     align-items: center;
     border-radius: 8px;
 }
 
 .search-income input {
-    width: 100%;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    outline: none;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
 }
 
 .search-income input::placeholder {
     color: #aaa;
 }
 
+.sort{
+
+  & select{
+    padding: 0.5rem 1rem;
+  }
+}
+
 .add-income button {
-    background: var(--theme-color);
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
+  background: var(--theme-color);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
 }
 
 .add-income button:hover {
-    background: #218838;
+  background: #218838;
 }
 
 /* ------------------------------- [ 2. Modal Styling ] ------------------------- */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
   
 .modal-content {
@@ -110,36 +117,76 @@
 
 .income-ul{
   margin-top: 1rem;
+
+  & .income-list{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    grid-template-columns: repeat(4,1fr);
+  }
+  
+  & .income-category{
+    display:flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  & .income-transactiondata{
+    text-align: center;
+  }
+  
+  & .income-amount{
+    text-align: center;
+    color: #28a745;
+  }
+  
+  & .income-action{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+  }
 }
 
-.income-list{
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  grid-template-columns: repeat(4,1fr);
-}
+/* Media query for mobile  */
 
-.income-category{
-  display:flex;
-  gap: 1rem;
-  align-items: center;
-}
+@media (max-width: 768px) {
+  .inside-income {
+    margin: 1rem;
+  }
 
-.income-transactiondata{
-  text-align: center;
-}
+  .operation-income {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 
-.income-amount{
-  text-align: center;
-  color: #28a745;
-}
+  .add-income button {
+    width: 100%;
+  }
 
-.income-action{
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  gap: 1.5rem;
-  cursor: pointer;
+  .modal-content {
+    width: 90%;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .income-list {
+    gap: 0.5rem;
+  }
+
+  .income-category {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .income-action {
+    flex-direction: row;
+    gap: 1rem;
+  }
 }

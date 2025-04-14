@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { UserSidebar } from "./components/layout/UserSidebar";
 import { UserLogin } from "./components/common/UserLogin";
 import { UserSignup } from "./components/common/UserSignup";
@@ -17,15 +17,29 @@ import { ResetPassword } from "./components/common/ResentPassword";
 import { Setting } from "./components/user/Setting";
 import { Profile } from "./components/user/Profile";
 import { Account } from "./components/user/Account";
-// import { LandingPage } from "./components/common/LandingPage";
+import { useEffect } from "react";
+import { Notification } from "./components/user/Notification";
 
 export const App = () => {
   
   axios.defaults.baseURL = "http://localhost:5000";
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const role = localStorage.getItem("role");
+
+      if (role === "USER") {
+        navigate("/user/dashboard");
+      }
+      if (role === "ADMIN") {
+        navigate("/admin/dashboard");
+      }
+    
+  }, []);
+
   return (
     <div>
       <Routes>
-        {/* <Route path="/" element={<LandingPage />} /> */}
         <Route path="/user/userlogin" element={<UserLogin />} />
         <Route path="/user/usersignup" element={<UserSignup />} />
         <Route path="/admin/adminlogin" element={<AdminLogin />} />
@@ -41,6 +55,7 @@ export const App = () => {
             <Route path="settings" element={<Setting />} >
                 <Route path="user-profile" element={<Profile />} />
                 <Route path="user-account" element={<Account />} />
+                <Route path="user-notification" element={<Notification />} />
             </Route>
           </Route>
 

@@ -1,8 +1,9 @@
+import "../../assets/css/loader.css";
 
 export const CustomLoader = () => {
   return (
     <div>
-        <h1>Loading ....</h1>
+        <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
   )
 }

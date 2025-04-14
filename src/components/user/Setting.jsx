@@ -34,6 +34,18 @@ export const Setting = () => {
                     <i className="fa-solid fa-chevron-right"></i>
                   </Link>
                 </li>
+
+                {/* Notifications */}
+                <li className="settings-list">
+                  <Link to="/user/settings/user-notification" className="settings-link">
+                    <div className="settings-icon">
+                      <img src="/images/notification.png" alt="Notification Icon" />
+                      <span>Notifications</span>
+                    </div>
+                    <i className="fa-solid fa-chevron-right"></i>
+                  </Link>
+                </li>
+
               </ul>
             )
           }

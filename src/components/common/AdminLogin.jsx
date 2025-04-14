@@ -51,25 +51,25 @@ export const AdminLogin = () => {
   return (
     <>
       <div className="login-background">
-        <div class="login-section">
+        <div className="login-section">
           <form onSubmit={handleSubmit(submitHandler)}>
             <h1>Admin Login</h1>
-            <div class="login-details">
-              <div class="row">
+            <div className="login-details">
+              <div className="row">
                 <input type="email" placeholder="Enter Email" {...register("email", validationSchema.emailValidator)}/>
                 <span>{errors.email?.message}</span>
               </div>
-              <div class="row">
+              <div className="row">
                 <input type="password" placeholder="Enter Password" {...register("password", validationSchema.passwordValidator)}/>
                 <span>{errors.password?.message}</span>
               </div>
-              <div class="fp">
+              <div className="fp">
                 <span>Forgot Password?</span>
               </div>
-              <div class="submit-btn">
+              <div className="submit-btn">
                 <input type="submit" value="Login"/>
               </div>
-              <div class="info">
+              <div className="info">
                 <span>
                   {`Don't have an account?`}
                   <Link to="/admin/adminsignup">sign up</Link>

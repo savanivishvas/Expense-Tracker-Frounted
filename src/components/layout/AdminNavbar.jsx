@@ -1,7 +1,21 @@
 import { Link } from "react-router-dom"
 import "../../assets/css/adminnavbar.css"
+import { useEffect, useState } from "react";
 
 export const AdminNavbar = () => {
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        setIsLoggedIn(true);
+    },[])
+
+    const handleLogout = () => {
+        localStorage.removeItem("id");    
+        localStorage.removeItem("role");
+        setIsLoggedIn(false);
+    }
+
   return (
     <div>
         <nav className="navbar">
@@ -10,12 +24,21 @@ export const AdminNavbar = () => {
             </div>
             <div>
                 <ul className="nav-list">
-                    <li>
-                        <Link to="/admin/adminlogin">Login</Link>
-                    </li>
-                    <li>
-                        <Link to="/admin/adminsignup">Signup</Link>
-                    </li>
+                    {
+                        isLoggedIn === true ?
+                        <li>
+                            <Link to="/admin/adminlogin" onClick={handleLogout}>Logout</Link>
+                        </li>
+                        :
+                        <>
+                            <li>
+                                <Link to="/admin/adminlogin">Login</Link>
+                            </li>
+                            <li>
+                                <Link to="/admin/adminsignup">Signup</Link>
+                            </li>
+                        </>
+                    }
                 </ul>
             </div>
         </nav>

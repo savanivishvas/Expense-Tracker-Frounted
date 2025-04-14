@@ -10,6 +10,7 @@ export const Income = () => {
   const [incomedata, setincomedata] = useState([]);
   const [editdata, seteditdata] = useState(null);
   const [search,setsearch] = useState("");
+  const [sortPrice, setSortPrice] = useState("");
 
   const { register, handleSubmit, setValue, formState: { errors } , reset } = useForm();
 
@@ -71,10 +72,24 @@ export const Income = () => {
     setValue("transactionDate", income.transactionDate);
   };
 
-  const filteredIncome = incomedata.filter((income) => {
-    return `${income.category}`.toLowerCase().includes(search.toLowerCase());
-  })
+ // Filtering
+ const filterIncomeData = () => {
+  return incomedata.filter((income) =>
+    income.category.toLowerCase().includes(search.toLowerCase())
+  );
+};
 
+  // Sorting
+  const sortIncomeData = (data) => {
+    if (sortPrice === "asc") {
+      return [...data].sort((a, b) => a.amount - b.amount);
+    } else if (sortPrice === "desc") {
+      return [...data].sort((a, b) => b.amount - a.amount);
+    }
+    return data;
+  };
+
+  const filteredIncome = sortIncomeData(filterIncomeData());
 
   const validationSchema = {
     category: {
@@ -104,6 +119,15 @@ export const Income = () => {
                 onChange={(e) => setsearch(e.target.value)}
               />
             </div>
+
+            <div className="sort">
+              <select onChange={(e) => setSortPrice(e.target.value)}>
+                <option value="">Sort By Amount</option>
+                <option value="asc">Low to High</option>
+                <option value="desc">High to Low</option>
+              </select>
+            </div>
+
             <div className="add-income">
               <button onClick={() => { 
                 seteditdata(null); 
