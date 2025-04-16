@@ -1,204 +1,87 @@
 .admin-containar{
-    background-color: #F7F7F7;
+  background-color: #F7F7F7;
 }
 
 .inside-admin{
-    margin: 2rem;
+  margin: 2rem;
 }
 
-/* ------------------- [ 1. search - add income ] --------------- */
+/* 1st dashboard */
 
-.operation-admin {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: 0.85fr 0.15fr;
-    align-items: center;
-    border-radius: 8px;
+/* same code */
+
+/* 2nd category chart */
+
+.category-graph-container{
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+  grid-template-columns: 0.5fr 0.5fr;
 }
 
-.search-admin input {
-    width: 100%;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    outline: none;
+.income-category-chart{
+
+  & h3{
+    margin: 1rem 0;
+  }
+
 }
 
-.search-admin input::placeholder {
-    color: #aaa;
-}
+.expense-category-chart{
 
-.add-admin button {
-    background: var(--theme-color);
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-}
-
-.add-admin button:hover {
-    background: #218838;
-}
-
-/* ------------------------------- [ 2. Modal Styling ] ------------------------- */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+  & h3{
+    margin: 1rem 0;
+  }
   
-.modal-content {
-  background: white;
+}
+
+/* 3nd sum of all category */
+
+.category-summery-container{
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+  grid-template-columns: 0.5fr 0.5fr;
+}
+
+.category-summary {
+  background-color: #ffffff;
   padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  text-align: center;
-}
-  
-.modal-content h3 {
-  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.modal-content label {
-  display: block;
-  margin: 5px 0;
-  text-align: left;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.modal-buttons {
+.summery-heading{
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
-  
-.modal-buttons button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+
+.category-summary h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #333;
 }
 
-.modal-buttons button:first-child {
-  background: #28a745;
-  color: white;
+.category-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.modal-buttons button:last-child {
-  background: #dc3545;
-  color: white;
+.category-summary li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
 }
 
-/* -------------------------------- [3. income sources ] -------------------------- */
-
-
-table {
-  width: 100%;
-  margin: 1rem auto;
-  /* border: 1px solid var(--theme-color); */
-  /* box-shadow: rgba(255, 255, 255, 0.2)0px 7px 29px 0px; */
-
-  & th {
-    padding: 0.5rem;
-    font-size: 1.4rem;
-    background: var(--theme-color);
-    width: 100%;
-    color: white;
-    text-transform: capitalize;
-  }
-
-  & tr {
-    display: grid;
-    grid-template-columns:repeat(3 , 1fr);
-    text-align: center;
-    /* border: 0.5px solid var(--theme-color); */
-  }
-
-  & td {
-    font-size: 1.1rem;
-    text-align: center;
-    padding: 1rem;
-    margin: 0.5rem auto;
-    letter-spacing: 0.1rem;
-  }
-
-  & .admin-action{
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    gap: 1.5rem;
-    cursor: pointer;
-  }
+.category-name {
+  color: #555;
 }
 
-/* Media query for mobile */
-
-@media (max-width: 768px) {
-  .inside-admin {
-    margin: 1rem;
-  }
-
-  .operation-admin {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .add-admin button {
-    width: 100%;
-  }
-
-  .modal-content {
-    width: 90%;
-    padding: 15px;
-  }
-
-  .modal-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  table {
-    overflow-x: auto;
-    display: block;
-  }
-
-  table tr {
-    grid-template-columns: 1fr;
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #ddd;
-    padding: 0.5rem 0;
-  }
-
-  table th {
-    font-size: 1rem;
-    padding: 0.5rem;
-  }
-
-  table td {
-    font-size: 0.95rem;
-    padding: 0.5rem;
-  }
-
-  .admin-action {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
+.category-amount {
+  font-weight: bold;
+  color: #2c7be5;
 }

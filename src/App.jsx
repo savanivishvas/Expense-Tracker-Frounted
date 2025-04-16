@@ -19,6 +19,7 @@ import { Profile } from "./components/user/Profile";
 import { Account } from "./components/user/Account";
 import { useEffect } from "react";
 import { Notification } from "./components/user/Notification";
+import { Category } from "./components/admin/Category";
 
 export const App = () => {
   
@@ -61,6 +62,7 @@ export const App = () => {
 
           <Route path="/admin" element={<AdminSidebar />} >
              <Route path="dashboard" element={<AdminDashboard />} />
+             <Route path="category" element={<Category />} />
           </Route>
         </Route>
         

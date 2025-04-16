@@ -16,6 +16,12 @@ export const AdminSidebar = () => {
                     Dashboard
                   </Link>
               </li>
+              <li className="feature-list">
+                  <Link to="/admin/category" className="feature-link">
+                    <img src="/images/category.png" alt="dashboard-img" className="feature-icon"/>
+                    Category
+                  </Link>
+              </li>
             </ul>
           </div>
         </div>

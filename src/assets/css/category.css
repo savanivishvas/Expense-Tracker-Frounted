@@ -1,0 +1,77 @@
+.category-containar{
+    background-color: #F7F7F7;
+}
+  
+.inside-category{
+  margin: 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 0.5fr 0.5fr;
+}
+  
+
+.inside-category > div {
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-dropdown select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.category-dropdown select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.category-list {
+  margin-top: 2rem;
+}
+
+.category-list h3 {
+  margin-bottom: 1rem;
+  color: #333333;
+  font-size: 1.25rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+}
+
+.category-list ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.category-list li {
+  margin-top: 0.8rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1rem;
+  color: #555555;
+}
+
+.category-list li span {
+  color: #007bff;
+  font-weight: 500;
+}
+
+.income-category{
+  & h3{
+    margin: 1rem 0;
+  }
+}
+
+.expense-category{
+  & h3{
+    margin: 1rem 0;
+  }
+}
